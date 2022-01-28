@@ -28,13 +28,35 @@
     flex-direction: column;
   }
 
+  .m-para {
+    font-size: unquote($string: "min(2vmax, 1rem)");
+    max-width: 67%;
+  }
+
   .d-para {
     display: none;
   }
 
   &__nav-links,
   &-bottom__nav-links {
+    padding-left: 0;
     list-style-type: none;
+    flex-wrap: wrap;
+    gap: 0.75em 2em;
+    justify-content: space-between;
+  }
+
+  .copyright-container {
+    order: 2;
+    font-size: unquote($string: "min(1.6vmax, 0.8rem)");
+    opacity: 0.8;
+    font-family: $secondaryFont;
+  }
+
+  &-bottom__nav-links {
+    order: 1;
+    font-size: unquote($string: "min(2vmax, 1rem)");
+    opacity: 0.8;
   }
 }
 
@@ -51,6 +73,11 @@
     .d-para {
       display: initial;
       max-width: 30%;
+    }
+
+    .copyright-container {
+      order: 1;
+      text-align: right;
     }
   }
 }

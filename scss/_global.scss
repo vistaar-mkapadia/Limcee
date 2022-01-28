@@ -67,6 +67,12 @@ p {
 }
 // Buttons End
 
+// Links
+a > i {
+  margin-left: 0.25em;
+}
+// Links
+
 .section {
   margin-block: 6rem;
   &-heading {
