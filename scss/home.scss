@@ -4,25 +4,27 @@
 
 // Header Section Start
 .header {
-  margin-top: 6em;
+  margin-top: calc(9vh + 2em);
   text-align: center;
 
   &__img-container {
     margin-top: 4rem;
   }
 
-  h3 {
+  h2 {
     font-family: $primaryFont;
   }
 }
 
 @media screen and (min-width: $desktopBreakpoint) {
   .header {
+    margin-top: 3.5em;
     text-align: left;
     display: flex;
     align-items: center;
 
     &__img-container {
+      margin-top: 0;
       display: flex;
       justify-content: flex-end;
     }
