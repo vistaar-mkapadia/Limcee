@@ -1,5 +1,33 @@
 @import "./variables";
 
+// Mixins Start
+@mixin mediaDesktop {
+  @media (min-width: #{$desktopBreakpoint}) {
+    @content;
+  }
+}
+
+@mixin sliderCircles(
+  $defaultColor: $gray,
+  $activeColor: $activeCircleBackground
+) {
+  button {
+    background-color: $defaultColor;
+  }
+  button.active {
+    background-color: $activeColor;
+  }
+}
+
+@mixin absolutePseudo($height: 0px, $width: 0px, $background: none) {
+  content: "";
+  position: absolute;
+  height: $height;
+  width: $width;
+  background: $background;
+}
+// Mixins End
+
 * {
   font-family: $secondaryFont;
 }
@@ -49,12 +77,9 @@ p {
   }
 
   &-heading::before {
-    content: "";
-    position: absolute;
+    @include absolutePseudo(4px, 50px, $yellow);
     height: 4px;
-    background: #ffde4b;
     top: 0;
-    width: 50px;
     left: 50%;
     transform: translateX(-50%);
   }
@@ -82,6 +107,8 @@ p {
 .circles-container {
   all: initial;
   display: flex;
+  width: 100%;
+  justify-content: center;
 
   button:first-of-type {
     margin-left: 0;

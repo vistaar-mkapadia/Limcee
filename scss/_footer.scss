@@ -38,7 +38,7 @@
   }
 }
 
-@media screen and (min-width: $desktopBreakpoint) {
+@include mediaDesktop {
   .footer {
     .highlight-footer {
       margin-top: 0;

@@ -1,8 +1,18 @@
 @import "./fonts";
 
-$lightOrange: #ff8631;
-$darkOrange: #ff9d58;
+// Fonts
 $primaryFont: "Georgia";
 $secondaryFont: "BrandonGrotesque-Regular";
-$desktopBreakpoint: 992px;
+
+// Colors
+$lightOrange: #ff8631;
+$darkOrange: #ff9d58;
+$lightBackgroud: #fff9f4;
+$secondaryLightBackground: #ffebda;
+$gray: #6a6a6a;
+$activeCircleBackground: #ffa362;
+$yellow: #ffde4b;
 $white: #fff;
+
+// Breakpoints
+$desktopBreakpoint: 992px;

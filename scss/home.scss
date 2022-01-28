@@ -16,7 +16,7 @@
   }
 }
 
-@media screen and (min-width: $desktopBreakpoint) {
+@include mediaDesktop {
   .header {
     margin-top: 3.5em;
     text-align: left;
@@ -41,7 +41,8 @@
     display: block;
   }
 }
-@media screen and (min-width: $desktopBreakpoint) {
+
+@include mediaDesktop {
   .floating-points-container {
     position: relative;
 
@@ -84,7 +85,7 @@
 
 // Kol Videos Section Starts
 .kol-videos-section {
-  background: #fff9f4;
+  background: $lightBackgroud;
   position: relative;
   text-align: center;
   .para {
@@ -92,36 +93,18 @@
   }
 
   .circles-container {
-    width: 100%;
-    margin-inline: auto;
     margin-top: 2rem;
-    justify-content: center;
-
-    button {
-      background-color: #6a6a6a;
-    }
-
-    button.active {
-      background: #ffa362;
-    }
+    @include sliderCircles;
   }
 
   &::before {
-    content: "";
-    height: 100%;
-    background: inherit;
-    width: 100vw;
-    position: absolute;
+    @include absolutePseudo(100%, 100vw, inherit);
     top: 0;
     left: -100vw;
   }
 
   &::after {
-    content: "";
-    height: 100%;
-    background: inherit;
-    width: 0.75rem;
-    position: absolute;
+    @include absolutePseudo(100%, 0.75rem, inherit);
     top: 0;
     right: -0.75rem;
   }
@@ -131,7 +114,7 @@
 // Doctor Says Section Starts
 .doctor-says-section {
   position: relative;
-  background: #ffebda;
+  background: $secondaryLightBackground;
   padding-top: 2rem;
 
   .quote-container {
@@ -149,43 +132,24 @@
   }
 
   .circles-container {
-    width: 100%;
-    margin-inline: auto;
     margin-block: 2rem 1rem;
-    justify-content: center;
-
-    button.active {
-      background: #ff8631;
-    }
-
-    button {
-      background: #fff;
-    }
+    @include sliderCircles;
   }
 
   &::before {
-    content: "";
-    height: 100%;
-    background: inherit;
-    width: 100vw;
-    position: absolute;
+    @include absolutePseudo(100%, 100vw, inherit);
     top: 0;
     left: -100vw;
   }
 
   &::after {
-    content: "";
-    height: 100%;
-    background: inherit;
-    width: 0.75rem;
-    position: absolute;
+    @include absolutePseudo(100%, 0.75rem, inherit);
     top: 0;
     right: -0.75rem;
   }
 }
 // Doctor Says Section Ends
-
-@media screen and (min-width: $desktopBreakpoint) {
+@include mediaDesktop {
   .kol-doc-container {
     .carousel {
       text-align: left;
@@ -232,17 +196,12 @@
     }
 
     &::after {
-      content: "";
-      height: 100%;
-      background: inherit;
-      width: 100vw;
-      position: absolute;
+      @include absolutePseudo(100%, 100vw, inherit);
       top: 0;
       right: -100vw;
     }
   }
 }
-
 // Kol Videos & Doctor Says Ends
 
 // Latest Articles Section Starts
@@ -268,18 +227,8 @@
 
   #latestArticles {
     .circles-container {
-      width: 100%;
-      margin-inline: auto;
       margin-block: 2rem 1rem;
-      justify-content: center;
-
-      button.active {
-        background: #ff8631;
-      }
-
-      button {
-        background: #fff;
-      }
+      @include sliderCircles;
     }
   }
   .btn-container {
@@ -288,15 +237,13 @@
   }
 }
 
-@media screen and (min-width: $desktopBreakpoint) {
-  .latest-articles {
-    #latestArticles {
-      .carousel-item {
-        padding: 1rem;
+@include mediaDesktop {
+  #latestArticles {
+    .carousel-item {
+      padding: 1rem;
 
-        &:last-of-type {
-          padding-right: 0;
-        }
+      &:last-of-type {
+        padding-right: 0;
       }
     }
   }
