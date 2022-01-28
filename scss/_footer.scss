@@ -1,0 +1,57 @@
+// Footer Start
+.footer {
+  &__top {
+    background: #737b7d;
+    color: #fff;
+  }
+  .highlight-container {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+  }
+
+  &__bottom {
+    background: #444444;
+
+    hr {
+      background: #fff;
+    }
+    p,
+    a {
+      color: #fff;
+    }
+  }
+
+  .footer__bottom-container {
+    display: block;
+    flex-direction: column;
+  }
+
+  .d-para {
+    display: none;
+  }
+
+  &__nav-links,
+  &-bottom__nav-links {
+    list-style-type: none;
+  }
+}
+
+@media screen and (min-width: $desktopBreakpoint) {
+  .footer {
+    .highlight-footer {
+      margin-top: 0;
+    }
+
+    .m-para {
+      display: none;
+    }
+
+    .d-para {
+      display: initial;
+      max-width: 30%;
+    }
+  }
+}
+// Footer End

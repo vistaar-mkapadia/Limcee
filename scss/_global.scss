@@ -1,0 +1,89 @@
+@import "./variables";
+
+* {
+  font-family: $secondaryFont;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+p {
+  font-family: $primaryFont;
+}
+
+// Buttons Start
+
+.btn {
+  border: none;
+  border-radius: none;
+  text-transform: uppercase;
+  font-weight: bold;
+
+  &-primary {
+    background-color: $lightOrange;
+  }
+
+  &-secondary {
+    background-color: transparent;
+    color: $darkOrange !important;
+
+    &:hover {
+      background-color: unset;
+    }
+  }
+
+  &.icon i {
+    margin-left: 0.25em;
+  }
+}
+// Buttons End
+
+.section {
+  margin-block: 6rem;
+  &-heading {
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+    padding-top: 1rem;
+  }
+
+  &-heading::before {
+    content: "";
+    position: absolute;
+    height: 4px;
+    background: #ffde4b;
+    top: 0;
+    width: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &-subheading {
+    text-align: center;
+    color: #6a6a6a;
+    font-family: $primaryFont;
+  }
+
+  & .row {
+    margin-top: 2rem;
+  }
+}
+
+.carousel-indicators [data-bs-target] {
+  all: unset;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  margin-left: 0.5rem;
+  border: none;
+}
+
+.circles-container {
+  all: initial;
+  display: flex;
+
+  button:first-of-type {
+    margin-left: 0;
+  }
+}

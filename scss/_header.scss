@@ -1,0 +1,93 @@
+// Nav Start
+.navbar {
+  height: 9vh;
+  .navbar-toggler {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    .line {
+      display: block;
+      height: 2px;
+      width: 25px;
+      margin-bottom: 0.25em;
+      background: #000;
+      transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+        background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+    }
+
+    .line:last-of-type {
+      width: 15px;
+    }
+  }
+
+  .offcanvas {
+    top: 9vh;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+      background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease,
+      -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  }
+
+  .navbar-toggler:focus {
+    box-shadow: none;
+  }
+}
+
+.navbar.active {
+  .navbar-toggler {
+    .line:first-of-type {
+      transform: rotate(45deg) translate(5px, 1.5px);
+    }
+    .line:nth-of-type(2) {
+      transform: translateX(-25px);
+      opacity: 0;
+    }
+    .line:last-of-type {
+      width: 25px;
+      transform: rotate(-45deg) translate(7px, -5.5px);
+    }
+  }
+
+  .offcanvas {
+    right: 0;
+    width: 100%;
+  }
+
+  .offcanvas-backdrop {
+    background: unset;
+  }
+
+  .show {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    .navbar-nav {
+      margin-left: 0 !important;
+      padding-left: 0.75rem;
+    }
+  }
+
+  .alt-site-logo {
+    margin-bottom: 15vh !important;
+    padding-left: 0.75rem;
+  }
+}
+
+@media screen and (min-width: $desktopBreakpoint) {
+  .navbar {
+    height: auto;
+  }
+  .offcanvas {
+    top: 0;
+    flex-direction: row;
+  }
+  .navbar-toggler {
+    display: none !important;
+  }
+}
+// Nav End

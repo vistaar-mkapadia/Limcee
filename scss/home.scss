@@ -1,0 +1,314 @@
+@import "./global";
+@import "./header";
+@import "./footer";
+
+// Header Section Start
+.header {
+  margin-top: 6em;
+  text-align: center;
+
+  &__img-container {
+    margin-top: 4rem;
+  }
+
+  h3 {
+    font-family: $primaryFont;
+  }
+}
+
+@media screen and (min-width: $desktopBreakpoint) {
+  .header {
+    text-align: left;
+    display: flex;
+    align-items: center;
+
+    &__img-container {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}
+/* Header Section End */
+
+// Immunity that comes with benefits Section Start
+
+.floating-points-container {
+  text-align: center;
+  &__img-container > img {
+    margin-inline: auto;
+    display: block;
+  }
+}
+@media screen and (min-width: $desktopBreakpoint) {
+  .floating-points-container {
+    position: relative;
+
+    .tablet-img-container {
+      max-width: 350px;
+      margin-inline: auto;
+    }
+
+    .floating-point {
+      position: absolute;
+      max-width: fit-content;
+
+      h6 {
+        font-family: $primaryFont;
+      }
+    }
+
+    #fp1 {
+      top: 23%;
+      left: 8%;
+    }
+
+    #fp2 {
+      top: 44%;
+      left: 0;
+    }
+
+    #fp3 {
+      top: 23%;
+      right: 6%;
+    }
+
+    #fp4 {
+      top: 44%;
+      right: 0%;
+    }
+  }
+}
+// Immunity that comes with benefits Section End
+
+// Kol Videos Section Starts
+.kol-videos-section {
+  background: #fff9f4;
+  position: relative;
+  text-align: center;
+  .para {
+    margin-top: 1em;
+  }
+
+  .circles-container {
+    width: 100%;
+    margin-inline: auto;
+    margin-top: 2rem;
+    justify-content: center;
+
+    button {
+      background-color: #6a6a6a;
+    }
+
+    button.active {
+      background: #ffa362;
+    }
+  }
+
+  &::before {
+    content: "";
+    height: 100%;
+    background: inherit;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: -100vw;
+  }
+
+  &::after {
+    content: "";
+    height: 100%;
+    background: inherit;
+    width: 0.75rem;
+    position: absolute;
+    top: 0;
+    right: -0.75rem;
+  }
+}
+// Kol Videos Section Ends
+
+// Doctor Says Section Starts
+.doctor-says-section {
+  position: relative;
+  background: #ffebda;
+  padding-top: 2rem;
+
+  .quote-container {
+    background: $white;
+    text-align: center;
+    padding: 2rem 1rem;
+
+    .doctor-name {
+      margin-top: 1em;
+    }
+
+    .para {
+      margin-top: 1em;
+    }
+  }
+
+  .circles-container {
+    width: 100%;
+    margin-inline: auto;
+    margin-block: 2rem 1rem;
+    justify-content: center;
+
+    button.active {
+      background: #ff8631;
+    }
+
+    button {
+      background: #fff;
+    }
+  }
+
+  &::before {
+    content: "";
+    height: 100%;
+    background: inherit;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: -100vw;
+  }
+
+  &::after {
+    content: "";
+    height: 100%;
+    background: inherit;
+    width: 0.75rem;
+    position: absolute;
+    top: 0;
+    right: -0.75rem;
+  }
+}
+// Doctor Says Section Ends
+
+@media screen and (min-width: $desktopBreakpoint) {
+  .kol-doc-container {
+    .carousel {
+      text-align: left;
+    }
+
+    .section-heading,
+    .section-subheading {
+      text-align: left;
+    }
+
+    .section-heading::before {
+      left: 0;
+      transform: translateX(0);
+    }
+    .kol-videos-section::after,
+    .doctor-says-section::before {
+      display: none;
+    }
+  }
+  .kol-videos-section,
+  .doctor-says-section {
+    padding-block: 3rem;
+  }
+
+  .kol-videos-section {
+    padding-right: 4rem;
+    padding-left: 0;
+  }
+
+  .doctor-says-section {
+    padding-left: 4rem;
+    padding-right: 0;
+
+    .doctor-profile-container {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-around;
+      text-align: left;
+
+      .para {
+        margin-block: 0;
+        max-width: 50%;
+      }
+    }
+
+    &::after {
+      content: "";
+      height: 100%;
+      background: inherit;
+      width: 100vw;
+      position: absolute;
+      top: 0;
+      right: -100vw;
+    }
+  }
+}
+
+// Kol Videos & Doctor Says Ends
+
+// Latest Articles Section Starts
+.latest-articles {
+  .img-container {
+    position: relative;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+
+    &__label {
+      display: block;
+      position: absolute;
+      background: yellow;
+      bottom: 0.5rem;
+      left: 1rem;
+      padding: 0.2em 0.5em;
+      border-radius: 2px;
+    }
+  }
+
+  #latestArticles {
+    .circles-container {
+      width: 100%;
+      margin-inline: auto;
+      margin-block: 2rem 1rem;
+      justify-content: center;
+
+      button.active {
+        background: #ff8631;
+      }
+
+      button {
+        background: #fff;
+      }
+    }
+  }
+  .btn-container {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+}
+
+@media screen and (min-width: $desktopBreakpoint) {
+  .latest-articles {
+    #latestArticles {
+      .carousel-item {
+        padding: 1rem;
+
+        &:last-of-type {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+}
+
+// Latest Articles Section Ends
+// Faqs Section Start
+.faqs {
+  .accordion-button.collapsed::after {
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23ff9d58' class='bi bi-plus-lg' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z'/></svg>");
+  }
+
+  .accordion-button::after {
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23ff9d58' class='bi bi-dash' viewBox='0 0 16 16'><path d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z'/></svg>");
+  }
+}
+// Faqs Section End
